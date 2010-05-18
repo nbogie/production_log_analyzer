@@ -46,6 +46,31 @@ EOF
     assert_equal 0.034519, entry.request_time
   end
 
+
+  def test_parse_when_format_logged
+    request = <<EOF
+Processing RssController#uber to xml (for 67.18.200.5 at Mon Mar 07 00:00:25 CST 2005)
+Parameters: {:id=>"author", :"rss/uber/author.html/uber/author"=>nil, :action=>"uber", :username=>"looch", :controller=>"rss"}
+Cookie set: auth=dc%2FGUP20BwziF%2BApGecc0pXB0PF0obi55az63ubAFtsnOOdJPkhfJH2U09yuzQD3WtdmWnydLzFcRA78kwi7Gw%3D%3D; path=/; expires=Thu, 05 Mar 2015 06:00:25 GMT
+Cookie set: ubid=kF05DqFH%2F9hRCOxTz%2Bfb8Q7UV%2FI%3D; path=/; expires=Thu, 05 Mar 2015 06:00:25 GMT
+Browser Load (0.003963)   SELECT * FROM browsers WHERE ubid = 'kF05DqFH/9hRCOxTz+fb8Q7UV/I=' LIMIT 1
+Person Load (0.002445)   SELECT * FROM people WHERE username = 'looch' AND active = '1' LIMIT 1
+ProfileImage Load (0.001554)   SELECT * FROM profile_images WHERE id = 2782 LIMIT 1
+Rendering rss/rss2.0 (200 OK)
+Completed in 0.034519 (28 reqs/sec) | Rendering: 0.011770 (34%) | DB: 0.007962 (23%)
+EOF
+    request = request.split "\n"
+
+    entry = LogParser::LogEntry.new []
+
+    entry.parse request
+    assert_kind_of LogParser::LogEntry, entry
+    assert_equal "RssController#uber", entry.page
+    assert_equal 3, entry.queries.length
+    assert_equal ['Browser Load', 0.003963], entry.queries.first
+    assert_equal 0.034519, entry.request_time
+  end
+
   def test_page
     assert_equal "TwinklerController#index", @entry.page
   end
