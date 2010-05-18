@@ -81,7 +81,7 @@ module LogParser
         when /^Parameters/, /^Cookie set/, /^Rendering/,
           /^Redirected/ then
           # nothing
-        when /^Processing ([\S]+)(?: to ([\S]+))? \(for (.+) at (.*)\) \[([\S+]+)\]/ then           
+        when /^Processing ([\S]+)(?: to ([\S]+))? \(for (.+) at (.*)\)(?: \[([\S+]+)\])?/ then           
           next if @in_component > 0
           @page = $1
           @format = $2

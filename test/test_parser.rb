@@ -49,7 +49,7 @@ EOF
 
   def test_parse_when_format_logged
     request = <<EOF
-Processing RssController#uber to xml (for 67.18.200.5 at Mon Mar 07 00:00:25 CST 2005)
+Processing RssController#uber to xml (for 67.18.200.5 at Mon Mar 07 00:00:25 CST 2005) [GET]
 Parameters: {:id=>"author", :"rss/uber/author.html/uber/author"=>nil, :action=>"uber", :username=>"looch", :controller=>"rss"}
 Cookie set: auth=dc%2FGUP20BwziF%2BApGecc0pXB0PF0obi55az63ubAFtsnOOdJPkhfJH2U09yuzQD3WtdmWnydLzFcRA78kwi7Gw%3D%3D; path=/; expires=Thu, 05 Mar 2015 06:00:25 GMT
 Cookie set: ubid=kF05DqFH%2F9hRCOxTz%2Bfb8Q7UV%2FI%3D; path=/; expires=Thu, 05 Mar 2015 06:00:25 GMT
@@ -65,6 +65,8 @@ EOF
 
     entry.parse request
     assert_kind_of LogParser::LogEntry, entry
+    assert_equal "GET", entry.verb
+    assert_equal "xml", entry.format
     assert_equal "RssController#uber", entry.page
     assert_equal 3, entry.queries.length
     assert_equal ['Browser Load', 0.003963], entry.queries.first
