@@ -18,6 +18,8 @@ module LogParser
     # Controller and action for this request
 
     attr_reader :page
+    attr_reader :format  #(optional) format of request such as csv, xml, json...
+    attr_reader :verb #(mandatory) http method #PUT/GET/POST, etc
 
     ##
     # Requesting IP
@@ -55,6 +57,8 @@ module LogParser
 
     def initialize(entry)
       @page = nil
+      @format = nil #like json,xml,csv  - part of page.
+      @verb = nil #PUT/GET/POST/etc, http request method
       @ip = nil
       @time = nil
       @queries = []
@@ -77,11 +81,13 @@ module LogParser
         when /^Parameters/, /^Cookie set/, /^Rendering/,
           /^Redirected/ then
           # nothing
-        when /^Processing ([\S]+) \(for (.+) at (.*)\)/ then
+        when /^Processing ([\S]+)(?: to ([\S]+))? \(for (.+) at (.*)\) \[([\S+]+)\]/ then           
           next if @in_component > 0
           @page = $1
-          @ip   = $2
-          @time = $3
+          @format = $2
+          @ip   = $3
+          @time = $4
+          @verb = $5          
         # Rails 2.3
         when /Completed in (\d+)ms \(View: (\d*), DB: (\d*)\)/ then
           next if @in_component > 0
@@ -120,6 +126,8 @@ module LogParser
     def ==(other) # :nodoc:
       other.class == self.class and
       other.page == self.page and
+      other.format == self.format and
+      other.verb == self.verb and
       other.ip == self.ip and
       other.time == self.time and
       other.queries == self.queries and
