@@ -188,9 +188,12 @@ class Analyzer
       LogParser.parse fp do |entry|
         entry_page = entry.page
         next if entry_page.nil?
-        @request_times[entry_page] << entry.request_time
-        @db_times[entry_page] << entry.db_time
-        @render_times[entry_page] << entry.render_time
+        key_components=[entry.page.to_s, entry.verb.to_s]
+        key_components << entry.format.to_s unless entry.format.nil?
+        entry_key = key_components.join(".")
+        @request_times[entry_key] << entry.request_time
+        @db_times[entry_key] << entry.db_time
+        @render_times[entry_key] << entry.render_time
       end
     end
   end
