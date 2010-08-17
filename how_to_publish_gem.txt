@@ -1,0 +1,8 @@
+1. update Rakefile to change the declared gem name, authors, whatever.
+2. create an account on rubygems.org
+3. rake package
+4. gem push pkg/nbogie-production_log_analyzer-1.5.1.1.gem
+
+
+# see also:
+# * http://drnicwilliams.com/2009/11/04/hacking-someones-gem-with-github-and-gemcutter/
