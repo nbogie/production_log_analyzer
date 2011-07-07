@@ -138,6 +138,33 @@ In the future, pl_analyze will be able to read from STDIN.
           TeamsController#progress took 0.000s
           TeamsController#progress took 0.000s
 
+There's an experimental report-differ which you can invoke as follows:
+
+    ruby -Ilib report_differ.rb report_b.txt report_a.txt > report_diff.txt
+
+Sample diff output
+
+    Request_Times_Summary:                 Count                Avg                  Min                  Max                 
+    ALL_REQUESTS                           +1.4(16515->22909)   -2.2(0.405->0.18)     1.0(0.001->0.001)   -1.6(59.678->37.721)
+
+    SleepwalkersController#update.PUT.xml  +1.4(6249->8793)     -1.1(0.079->0.07)    +1.4(0.028->0.04)    -2.7(8.328->3.103)  
+    SleepwalkersController#update.PUT.csv  +1.4(6245->8807)     -1.0(0.099->0.097)   -1.0(0.028->0.027)   +1.2(2.536->3.02)   
+    SleepwalkersController#show.GET        +1.4(509->710)       -1.2(0.072->0.061)   -1.1(0.014->0.013)   -2.3(3.505->1.504)  
+    SleepwalkersController#show.GET.json   +1.4(496->702)       -1.2(0.076->0.064)   +1.0(0.026->0.027)   -7.3(4.874->0.663)  
+    AccomplicesController#history.GET.csv  +1.4(470->680)       -3.3(5.35->1.618)     1.0(0.003->0.003)   -1.5(20.681->13.692)
+    WindsController#feeds.GET              +1.4(237->320)       -1.1(0.201->0.183)   -1.2(0.096->0.083)   +1.5(1.304->1.989)  
+    ScamsController#show.GET               +1.3(236->317)       -3.0(11.793->3.869)  -1.1(0.038->0.034)   -1.6(59.678->37.721)
+    SleepwalkersController#update.PUT      -1.1(9->8)           -1.1(0.051->0.047)   -1.0(0.035->0.034)   -1.2(0.09->0.076)   
+    AccomplicesController#show.GET.xml      1.0(2->2)           -1.0(0.102->0.1)      1.0(0.021->0.021)   -1.0(0.184->0.179)  
+    ScamsController#map.GET                +6.0(2->12)          -3.5(1.075->0.305)   -1.8(0.141->0.08)    +1.1(2.008->2.112)  
+    WindsController#feeds.GET.atom          1.0(1->1)           -1.1(0.061->0.058)   -1.1(0.061->0.058)   -1.1(0.061->0.058)  
+    ScamsController#tag.GET.rss             1.0(1->1)           -1.0(0.134->0.129)   -1.0(0.134->0.129)   -1.0(0.134->0.129)  
+
+    Unmatched_Actions: 
+
+    ScamsController#index.GET.json                               only in report_a.txt
+    Api::V1::MisinterpretationsController#destroy.DELETE.        only in report_a.txt
+
 == What's missing
 
 * More reports
