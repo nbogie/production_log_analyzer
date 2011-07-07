@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'report/report_differ'
+
+if ARGV.size != 2 then
+  puts "Usage: #{$0} report_a report_b"
+  exit 1
+end
+
+ReportDiffer.compare_files(ARGV[0], ARGV[1])  
