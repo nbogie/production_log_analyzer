@@ -1,0 +1,156 @@
+Request Times Summary:                            	Count	Avg	Std Dev	Min	Max
+ALL REQUESTS:                                     	16515	0.405	2.023	0.001	59.678
+
+Api::V1::SleepwalkersController#update.PUT.xml:   	6249	0.079	0.176	0.028	8.328
+Api::V1::SleepwalkersController#update.PUT.csv:   	6245	0.099	0.085	0.028	2.536
+HealthController#pulse.GET:                       	791	0.002	0.005	0.001	0.129
+Api::V1::SleepwalkersController#show.GET:         	509	0.072	0.170	0.014	3.505
+Api::V1::SleepwalkersController#show.GET.json:    	496	0.076	0.224	0.026	4.874
+Api::V1::SleepwalkersController#show.GET.xml:     	491	0.065	0.065	0.023	0.624
+Api::V1::SleepwalkersController#show.GET.csv:     	474	0.029	0.029	0.011	0.239
+AccomplicesController#history.GET.csv:            	470	5.350	3.748	0.003	20.681
+WindsController#feeds.GET:                        	237	0.201	0.153	0.096	1.304
+ScamsController#show.GET:                         	236	11.793	8.460	0.038	59.678
+ScamsController#index.GET:                        	147	0.600	0.395	0.076	3.638
+ScamsController#outputs.GET:                      	114	0.037	0.063	0.011	0.404
+Api::V1::SleepwalkersController#update.PUT:       	9	0.051	0.017	0.035	0.090
+ScamsController#index.GET.atom:                   	9	0.193	0.065	0.134	0.292
+ScamsController#index.GET.rss:                    	9	0.132	0.054	0.095	0.242
+Api::V1::SleepwalkersController#create.POST:      	3	0.369	0.342	0.076	0.849
+Api::V1::SleepwalkersController#destroy.DELETE:   	3	0.046	0.009	0.037	0.059
+Api::V1::MisinterpretationsController#show.GET:   	2	0.021	0.005	0.016	0.026
+Api::V1::AccomplicesController#show.GET.xml:      	2	0.102	0.081	0.021	0.184
+Api::V1::SleepwalkersController#index.GET:        	2	2.887	0.327	2.560	3.214
+ScamsController#map.GET:                          	2	1.075	0.933	0.141	2.008
+ScamsController#tag.GET.atom:                     	2	0.462	0.185	0.277	0.647
+Api::V1::MisinterpretationsController#create.POST:	1	0.075	0.000	0.075	0.075
+Api::V1::MisinterpretationsController#update.PUT: 	1	0.016	0.000	0.016	0.016
+Api::V1::AccomplicesController#create.POST.xml:   	1	0.089	0.000	0.089	0.089
+Api::V1::AccomplicesController#destroy.DELETE.xml:	1	0.027	0.000	0.027	0.027
+Api::V1::AccomplicesController#update.PUT.xml:    	1	0.030	0.000	0.030	0.030
+Api::V1::SleepwalkersController#index.GET.json:   	1	0.340	0.000	0.340	0.340
+Api::V1::SleepwalkersController#index.GET.xml:    	1	0.385	0.000	0.385	0.385
+ScamsController#tag.GET.rss:                      	1	0.134	0.000	0.134	0.134
+WindsController#favourites.GET.json:              	1	0.019	0.000	0.019	0.019
+WindsController#feeds.GET.atom:                   	1	0.061	0.000	0.061	0.061
+WindsController#feeds.GET.json:                   	1	0.013	0.000	0.013	0.013
+WindsController#feeds.GET.rss:                    	1	0.037	0.000	0.037	0.037
+WindsController#show.GET:                         	1	1.988	0.000	1.988	1.988
+
+Slowest Request Times:
+	ScamsController#show.GET took 59.678s
+	ScamsController#show.GET took 50.577s
+	ScamsController#show.GET took 48.901s
+	ScamsController#show.GET took 38.601s
+	ScamsController#show.GET took 34.107s
+	ScamsController#show.GET took 30.878s
+	ScamsController#show.GET took 30.697s
+	ScamsController#show.GET took 29.660s
+	ScamsController#show.GET took 28.655s
+	ScamsController#show.GET took 28.548s
+
+------------------------------------------------------------------------
+
+DB Times Summary:                                 	Count	Avg	Std Dev	Min	Max
+ALL REQUESTS:                                     	16515	0.327	1.973	0.000	57.834
+
+Api::V1::SleepwalkersController#update.PUT.xml:   	6249	0.020	0.169	0.004	8.285
+Api::V1::SleepwalkersController#update.PUT.csv:   	6245	0.012	0.062	0.004	2.482
+HealthController#pulse.GET:                       	791	0.000	0.000	0.000	0.002
+Api::V1::SleepwalkersController#show.GET:         	509	0.020	0.160	0.001	3.456
+Api::V1::SleepwalkersController#show.GET.json:    	496	0.019	0.218	0.002	4.841
+Api::V1::SleepwalkersController#show.GET.xml:     	491	0.010	0.029	0.003	0.453
+Api::V1::SleepwalkersController#show.GET.csv:     	474	0.004	0.010	0.001	0.218
+AccomplicesController#history.GET.csv:            	470	5.320	3.747	0.000	20.632
+WindsController#feeds.GET:                        	237	0.062	0.143	0.006	1.213
+ScamsController#show.GET:                         	236	11.195	8.313	0.005	57.834
+ScamsController#index.GET:                        	147	0.075	0.064	0.000	0.516
+ScamsController#outputs.GET:                      	114	0.010	0.050	0.000	0.388
+Api::V1::SleepwalkersController#update.PUT:       	9	0.011	0.012	0.004	0.041
+ScamsController#index.GET.atom:                   	9	0.009	0.015	0.002	0.051
+ScamsController#index.GET.rss:                    	9	0.004	0.001	0.002	0.005
+Api::V1::SleepwalkersController#create.POST:      	3	0.174	0.220	0.008	0.485
+Api::V1::SleepwalkersController#destroy.DELETE:   	3	0.006	0.000	0.006	0.007
+Api::V1::MisinterpretationsController#show.GET:   	2	0.003	0.001	0.002	0.003
+Api::V1::AccomplicesController#show.GET.xml:      	2	0.005	0.002	0.003	0.006
+Api::V1::SleepwalkersController#index.GET:        	2	0.386	0.161	0.225	0.546
+ScamsController#map.GET:                          	2	0.036	0.006	0.030	0.043
+ScamsController#tag.GET.atom:                     	2	0.267	0.243	0.024	0.510
+Api::V1::MisinterpretationsController#create.POST:	1	0.048	0.000	0.048	0.048
+Api::V1::MisinterpretationsController#update.PUT: 	1	0.003	0.000	0.003	0.003
+Api::V1::AccomplicesController#create.POST.xml:   	1	0.033	0.000	0.033	0.033
+Api::V1::AccomplicesController#destroy.DELETE.xml:	1	0.004	0.000	0.004	0.004
+Api::V1::AccomplicesController#update.PUT.xml:    	1	0.004	0.000	0.004	0.004
+Api::V1::SleepwalkersController#index.GET.json:   	1	0.025	0.000	0.025	0.025
+Api::V1::SleepwalkersController#index.GET.xml:    	1	0.026	0.000	0.026	0.026
+ScamsController#tag.GET.rss:                      	1	0.032	0.000	0.032	0.032
+WindsController#favourites.GET.json:              	1	0.010	0.000	0.010	0.010
+WindsController#feeds.GET.atom:                   	1	0.019	0.000	0.019	0.019
+WindsController#feeds.GET.json:                   	1	0.004	0.000	0.004	0.004
+WindsController#feeds.GET.rss:                    	1	0.002	0.000	0.002	0.002
+WindsController#show.GET:                         	1	0.001	0.000	0.001	0.001
+
+Slowest Total DB Times:
+	ScamsController#show.GET took 57.834s
+	ScamsController#show.GET took 49.243s
+	ScamsController#show.GET took 47.576s
+	ScamsController#show.GET took 38.159s
+	ScamsController#show.GET took 32.935s
+	ScamsController#show.GET took 30.456s
+	ScamsController#show.GET took 30.270s
+	ScamsController#show.GET took 29.203s
+	ScamsController#show.GET took 27.959s
+	ScamsController#show.GET took 27.697s
+
+------------------------------------------------------------------------
+
+Render Times Summary:                             	Count	Avg	Std Dev	Min	Max
+ALL REQUESTS:                                     	16515	0.016	0.102	0.000	3.096
+
+Api::V1::SleepwalkersController#update.PUT.xml:   	6249	0.001	0.005	0.000	0.153
+Api::V1::SleepwalkersController#update.PUT.csv:   	6245	0.001	0.006	0.000	0.147
+HealthController#pulse.GET:                       	791	0.001	0.005	0.000	0.128
+Api::V1::SleepwalkersController#show.GET:         	509	0.001	0.009	0.000	0.149
+Api::V1::SleepwalkersController#show.GET.json:    	496	0.039	0.047	0.014	0.340
+Api::V1::SleepwalkersController#show.GET.xml:     	491	0.001	0.001	0.000	0.003
+Api::V1::SleepwalkersController#show.GET.csv:     	474	0.000	0.006	0.000	0.128
+AccomplicesController#history.GET.csv:            	470	0.001	0.009	0.000	0.159
+WindsController#feeds.GET:                        	237	0.124	0.063	0.073	0.605
+ScamsController#show.GET:                         	236	0.579	0.407	0.021	2.787
+ScamsController#index.GET:                        	147	0.457	0.288	0.066	3.096
+ScamsController#outputs.GET:                      	114	0.016	0.029	0.008	0.152
+Api::V1::SleepwalkersController#update.PUT:       	9	0.000	0.000	0.000	0.001
+ScamsController#index.GET.atom:                   	9	0.176	0.067	0.124	0.282
+ScamsController#index.GET.rss:                    	9	0.118	0.056	0.084	0.231
+Api::V1::SleepwalkersController#create.POST:      	3	0.000	0.000	0.000	0.001
+Api::V1::SleepwalkersController#destroy.DELETE:   	3	0.000	0.000	0.000	0.001
+Api::V1::MisinterpretationsController#show.GET:   	2	0.007	0.002	0.005	0.008
+Api::V1::AccomplicesController#show.GET.xml:      	2	0.001	0.001	0.000	0.001
+Api::V1::SleepwalkersController#index.GET:        	2	0.001	0.000	0.001	0.001
+ScamsController#map.GET:                          	2	1.025	0.944	0.081	1.969
+ScamsController#tag.GET.atom:                     	2	0.186	0.058	0.128	0.244
+Api::V1::MisinterpretationsController#create.POST:	1	0.000	0.000	0.000	0.000
+Api::V1::MisinterpretationsController#update.PUT: 	1	0.000	0.000	0.000	0.000
+Api::V1::AccomplicesController#create.POST.xml:   	1	0.001	0.000	0.001	0.001
+Api::V1::AccomplicesController#destroy.DELETE.xml:	1	0.001	0.000	0.001	0.001
+Api::V1::AccomplicesController#update.PUT.xml:    	1	0.000	0.000	0.000	0.000
+Api::V1::SleepwalkersController#index.GET.json:   	1	0.020	0.000	0.020	0.020
+Api::V1::SleepwalkersController#index.GET.xml:    	1	0.001	0.000	0.001	0.001
+ScamsController#tag.GET.rss:                      	1	0.092	0.000	0.092	0.092
+WindsController#favourites.GET.json:              	1	0.002	0.000	0.002	0.002
+WindsController#feeds.GET.atom:                   	1	0.034	0.000	0.034	0.034
+WindsController#feeds.GET.json:                   	1	0.003	0.000	0.003	0.003
+WindsController#feeds.GET.rss:                    	1	0.029	0.000	0.029	0.029
+WindsController#show.GET:                         	1	1.983	0.000	1.983	1.983
+
+Slowest Total Render Times:
+	ScamsController#index.GET took 3.096s
+	ScamsController#show.GET took 2.787s
+	ScamsController#show.GET took 2.770s
+	ScamsController#show.GET took 2.358s
+	ScamsController#index.GET took 2.319s
+	ScamsController#show.GET took 2.105s
+	ScamsController#show.GET took 2.024s
+	WindsController#show.GET took 1.983s
+	ScamsController#map.GET took 1.969s
+	ScamsController#show.GET took 1.698s

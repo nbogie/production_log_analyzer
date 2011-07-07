@@ -1,0 +1,54 @@
+Request Times Summary:                   	Count	Avg	Std Dev	Min	Max
+ALL REQUESTS:                            	11830	0.185	0.212	0.001	3.553
+
+FooController#update.PUT.xml:	            3557	0.144	0.137	0.059	3.212
+FooController#update.PUT.csv:	            3542	0.392	0.232	0.069	3.553
+FooController#show.GET.json: 	            851	0.069	0.087	0.030	1.257
+FooController#show.GET:      	            844	0.068	0.085	0.016	1.077
+BarController#history.GET.csv:   	        780	0.029	0.046	0.003	0.849
+HealthController#pulse.GET:              	374	0.006	0.010	0.001	0.134
+QuxController#index.GET:               	  64	0.434	0.174	0.041	0.922
+UsersController#feeds.GET:               	58	0.147	0.092	0.071	0.603
+
+Slowest Request Times:
+	FooController#update.PUT.csv took 3.553s
+	FooController#update.PUT.csv took 3.251s
+	FooController#update.PUT.xml took 3.212s
+
+------------------------------------------------------------------------
+
+DB Times Summary:                        	Count	Avg	Std Dev	Min	Max
+ALL REQUESTS:                            	11830	0.014	0.090	0.000	2.871
+
+FooController#update.PUT.xml:	            3557	0.015	0.090	0.003	2.832
+FooController#update.PUT.csv:	            3542	0.022	0.135	0.005	2.871
+FooController#show.GET.json: 	            851	0.008	0.023	0.004	0.585
+FooController#show.GET:      	            844	0.008	0.015	0.002	0.320
+BarController#history.GET.csv:   	        780	0.003	0.005	0.000	0.092
+HealthController#pulse.GET:              	374	0.000	0.000	0.000	0.000
+QuxController#index.GET:               	  64	0.043	0.024	0.000	0.147
+UsersController#feeds.GET:               	58	0.034	0.054	0.005	0.323
+
+Slowest Total DB Times:
+	FooController#update.PUT.csv took 2.871s
+	FooController#update.PUT.xml took 2.832s
+	FooController#update.PUT.csv took 2.772s
+
+------------------------------------------------------------------------
+
+Render Times Summary:                    	Count	Avg	Std Dev	Min	Max
+ALL REQUESTS:                            	11830	0.006	0.034	0.000	0.704
+
+FooController#update.PUT.xml:	            3557	0.001	0.007	0.000	0.152
+FooController#update.PUT.csv:	            3542	0.000	0.006	0.000	0.146
+FooController#show.GET.json: 	            851	0.027	0.037	0.013	0.328
+FooController#show.GET:      	            844	0.001	0.006	0.000	0.133
+BarController#history.GET.csv:   	        780	0.000	0.001	0.000	0.016
+HealthController#pulse.GET:              	374	0.000	0.007	0.000	0.132
+QuxController#index.GET:               	  64	0.326	0.135	0.022	0.509
+UsersController#feeds.GET:               	58	0.090	0.057	0.031	0.262
+
+Slowest Total Render Times:
+	QuxController#show.GET took 0.704s
+	QuxController#show.GET took 0.541s
+	QuxController#index.GET took 0.509s
