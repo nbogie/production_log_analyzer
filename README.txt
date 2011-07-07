@@ -28,6 +28,17 @@ that only match a single action.
 
   action_grep RssController#uber /var/log/production.log
 
+== About this fork
+
+This fork adds support for formats.  It will count (say) JSON requests
+of an action separately from counts for the same action's XML.
+
+This fork also adds an experimental report diff tool, pl_analyze_diff.
+Given two reports made previously with pl_analyze, this will tell you 
+which actions have become faster or slower, or how their request counts 
+differed.  It also mentions requests which appear in one report but not 
+the other.
+
 == Installing
 
   sudo gem install production_log_analyzer
@@ -138,11 +149,16 @@ In the future, pl_analyze will be able to read from STDIN.
           TeamsController#progress took 0.000s
           TeamsController#progress took 0.000s
 
-There's an experimental report-differ which you can invoke as follows:
+== Using pl_analyze_diff
 
-    ruby -Ilib report_differ.rb report_b.txt report_a.txt > report_diff.txt
+To run the report diff tool, simply give it the names of two reports you wish to
+compare.
 
-Sample diff output
+Here's an example invocation:
+
+    pl_analyze_diff report_b.txt report_a.txt > report_diff.txt
+
+And here's some sample output:
 
     Request_Times_Summary:                 Count                Avg                  Max                 
     ALL_REQUESTS                           +1.4(16515->22909)   -2.2(0.405->0.18)    -1.6(59.678->37.721)
@@ -172,4 +188,4 @@ Sample diff output
   * Help
   * What type of log file you've got (if somebody sends patches with tests)
 * Read from STDIN
-
+* Have the diff tool output JSON.
